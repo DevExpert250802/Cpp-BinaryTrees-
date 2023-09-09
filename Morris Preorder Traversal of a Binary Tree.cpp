@@ -9,17 +9,18 @@ vector < int > preorderTraversal(node * root) {
     if (cur -> left == NULL) {
       preorder.push_back(cur -> data);
       cur = cur -> right;
-    } else {
+    } 
+    else {
       node * prev = cur -> left;
       while (prev -> right != NULL && prev -> right != cur) {
         prev = prev -> right;
       }
-
-      if (prev -> right == NULL) {
-        prev -> right = cur;
-        preorder.push_back(cur -> data);
-        cur = cur -> left;
-      } else {
+       if (prev -> right == NULL) {
+         prev -> right = cur;
+         preorder.push_back(cur -> data);
+         cur = cur -> left;
+      } 
+       else {
         prev -> right = NULL;
         cur = cur -> right;
       }
