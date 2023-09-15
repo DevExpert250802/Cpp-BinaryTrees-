@@ -78,6 +78,40 @@ cout<<root->data;
   return 0;
 }
 
+
+
+
+
+
+//===============================================================================================================================================================================================
+
+class Solution {
+public:
+    void flatten(TreeNode* root) {
+      stack<TreeNode*>st;
+      if (root == NULL) return;
+      st.push(root);
+       while (!st.empty()) {
+       TreeNode* cur = st.top();
+         st.pop();
+       if (cur -> right != NULL) {
+        st.push(cur -> right);
+      }
+    if (cur -> left != NULL) {
+      st.push(cur -> left);
+    }
+    if (!st.empty()) {
+      cur -> right = st.top();
+    cur -> left = NULL;
+  }
+   }
+    }
+};
+
+
+//===============================================================================================================================================================================================
+
+
 /*  Time Complexity: O(N)
 
 Reason: The loop will execute for every node once.
