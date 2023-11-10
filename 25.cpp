@@ -4,7 +4,7 @@
 
 
 #include<bits/stdc++.h>
-vector<int> bottomView(TreeNode<int>* root) {
+vector<int> getTopView(TreeNode<int>* root) {
     vector<int> ans;
     if (root == nullptr) {
         return ans;
@@ -43,6 +43,11 @@ vector<int> bottomView(TreeNode<int>* root) {
 }
 
 
+
+
+
+    
+    
 
 /*  
 output : [4,2,1,3,7]
