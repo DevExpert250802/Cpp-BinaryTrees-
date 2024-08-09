@@ -22,8 +22,10 @@ Alter
 
 class Solution {
 public:
-    bool f(TreeNode *root1,TreeNode *root2)  {
+    bool f(TreeNode *root1,TreeNode *root2){
+    // If the first tree is empty, return true if the second tree is also empty
     if(!root1) return !root2;
+     // If the second tree is empty, return true if the first tree is also empty
     if(!root2) return !root1;
     return (root1->val==root2->val) && f(root1->left,root2->right) && f(root1->right,root2->left);
 
